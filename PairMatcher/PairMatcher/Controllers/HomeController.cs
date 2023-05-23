@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PairMatcher.DAL;
+using PairMatcher.Helpers;
 using PairMatcher.Models;
+using PairMatcher.ViewModels;
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 
@@ -19,7 +21,12 @@ namespace PairMatcher.Controllers
         {
             List<Student> students = _context.Students.ToList();
 
-            return View(students);
+            PairingHelper.PairStudents(students);
+
+            HomeVM homeVM = new HomeVM();
+
+            homeVM.Students = students.OrderBy(student=>student.Name).ToList();
+            return View(homeVM);
         }
 
 

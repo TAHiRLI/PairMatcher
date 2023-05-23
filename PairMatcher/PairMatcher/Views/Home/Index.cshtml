@@ -1,18 +1,29 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    int order = 1;
 }
-@model List<Student>
+@model HomeVM 
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    @{
-        foreach (var stud in Model)
-        {
-                <p>@stud.Name</p>
 
-        }
+<main class="container">
+    <h1 class="text-center my-3">Tələbələr</h1>
+    <article class="">
 
-        }
 
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>
+        <table class="table table-dark table-hover">
+
+            <tbody>
+                @foreach (var stud in Model.Students)
+                {
+                    <tr>
+                        <th scope="row">@order</th>
+                        <td>@stud.Name</td>
+                        <td>@stud.PairStudent?.Name</td>
+                    </tr>
+                    order++;
+                }
+               
+            </tbody>
+        </table>
+    </article>
+</main>
