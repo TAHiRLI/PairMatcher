@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PairMatcher.DAL;
 
@@ -11,9 +12,10 @@ using PairMatcher.DAL;
 namespace PairMatcher.Migrations
 {
     [DbContext(typeof(PairMatcherDbContext))]
-    partial class PairMatcherDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230523084034_identity added")]
+    partial class identityadded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
