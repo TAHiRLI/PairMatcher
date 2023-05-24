@@ -16,9 +16,11 @@
 </head>
 <body class="bg-light">
     <nav class="p-2 bg-danger">
-        <div class="container">
+        <div class="container d-flex justify-content-between">
 
-            <a class="btn btn-outline-dark" asp-action="addstudent" asp-controller="student"><i class="fa-solid fa-user-plus me-2"></i>Add Student</a>
+            <a class="btn btn-outline-dark" asp-action="addstudent" asp-controller="student"><i class="fa-solid fa-user-plus me-2"></i>Tələbə əlavə et</a>
+            <a class="btn btn-outline-dark" asp-action="index" asp-controller="home"><i class="fa-solid fa-equals me-2"></i>İkili Qruplar</a>
+            <a class="btn btn-outline-dark" asp-action="students" asp-controller="student"><i class="fa-solid fa-list me-2"></i>Bütün tələbələr</a>
         </div>
     </nav>
     @RenderBody()
