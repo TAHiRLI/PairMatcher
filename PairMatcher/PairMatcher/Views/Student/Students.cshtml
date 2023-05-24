@@ -1,0 +1,50 @@
+﻿
+@{
+    int order = 1;
+    ViewData["Title"] = "Students";
+}
+
+@model List<Student>
+
+
+<main class="container">
+    <h1 class="text-center my-3">Bütün Tələbələr</h1>
+    <article class="">
+
+
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Ad Soyad</th>
+                    <th>Cinsi</th>
+                    <th>Eyni cins uyğynlaşma</th>
+                    <th>Əməliyyat</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var stud in Model)
+                {
+                    <tr>
+                        <th scope="row">@order</th>
+                        <td>@stud.Name</td>
+                        <td>@(
+                            stud.Gender ? "Kişi" : "Qadın" 
+                            )</td>
+                        <td>@(
+                                            stud.SameGenderMatch ? "Eyni cins" : "Qarışıq"
+                            )</td>
+                        <td>
+                            <button class="btn-info btn">Edit</button>
+                            <button class="btn-danger btn">Delete</button>
+                        </td>
+
+                    </tr>
+                    order++;
+                }
+
+            </tbody>
+        </table>
+    </article>
+</main>

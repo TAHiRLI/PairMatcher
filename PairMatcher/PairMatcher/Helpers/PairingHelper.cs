@@ -18,11 +18,15 @@
 
             for (int i = 0; i < students.Count; i+=2)
             {
-                students[i].PairStudent = students[i + 1];
-                students[i].PairStudentId = students[i + 1].PairStudentId;
 
+                if(i+1 < students.Count)
+                {
+                students[i].PairStudentId = students[i + 1].PairStudentId;
+                students[i].PairStudent = students[i + 1];
                 students[i + 1].PairStudent = students[i];
                 students[i + 1].PairStudentId = students[i].PairStudentId;
+
+                }
             }
 
 
