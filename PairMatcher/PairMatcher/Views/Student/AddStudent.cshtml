@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "AddStudent";
+}
+
+@model Student
+
+<h1>AddStudent</h1>
+
+<div class="mb-3">
+    <label asp-for="Name" class="form-label">Email address</label>
+    <input type="text" asp-for="Name" class="form-control"  placeholder="Ad soyad">
+    <span class="text-danger " asp-validation-for="Name"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Gender" class="form-label">Cinsi</label>
+    <input type="checkbox" asp-for="Gender" />
+    <span class="text-danger " asp-validation-for="Gender"></span>
+
+</div>
+
