@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
+
 // 1. Database
 builder.Services.AddDbContext<PairMatcherDbContext>(opt =>
 {
