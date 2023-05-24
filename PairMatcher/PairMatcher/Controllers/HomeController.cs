@@ -21,8 +21,6 @@ namespace PairMatcher.Controllers
         {
             List<Student> students = _context.Students.ToList();
 
-            PairingHelper.PairStudents(students);
-
             HomeVM homeVM = new HomeVM();
 
             homeVM.Students = students.OrderBy(student=>student.Name).ToList();

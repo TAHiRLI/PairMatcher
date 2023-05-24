@@ -37,7 +37,7 @@
                             )</td>
                         <td>
                             <button class="btn-info btn">Edit</button>
-                            <button class="btn-danger btn">Delete</button>
+                            <a asp-action="delete" asp-controller="student" asp-route-id="@stud.Id" class="btn-danger btn delete-btn" >Delete</a>
                         </td>
 
                     </tr>
@@ -48,3 +48,5 @@
         </table>
     </article>
 </main>
+
+                      
