@@ -8,7 +8,8 @@
 
 
             // shuffling the students list with Fisher-Yates Shuffle algorithm
-            for (int i = students.Count - 1; i > 0; i--)
+            var numOfStudents = students.Count %2 == 0 ? students.Count : students.Count-1;
+            for (int i = numOfStudents - 1; i > 0; i--)
             {
                 int j = random.Next(i);
                (students[i], students[j]) = (students[j], students[i]);
@@ -16,10 +17,11 @@
 
             // pairing the students 
 
-            for (int i = 0; i < students.Count; i+=2)
+
+            for (int i = 0; i < numOfStudents; i+=2)
             {
 
-                if(i+1 < students.Count)
+                if(i+1 < numOfStudents)
                 {
                 students[i].PairStudentId = students[i + 1].PairStudentId;
                 students[i].PairStudent = students[i + 1];
