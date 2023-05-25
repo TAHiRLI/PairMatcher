@@ -15,7 +15,10 @@ $(".delete-btn").on("click", (e) => {
             let href = e.target?.getAttribute("href");
             console.log(href)
 
-            fetch(href).then(() => {
+            fetch(href).then((res) => {
+                if (res.redirected) {
+                    window.location = "/account/login"
+                }
                 Swal.fire(
                     'Silindi !',
                     'Tələbə uğurla silindi',

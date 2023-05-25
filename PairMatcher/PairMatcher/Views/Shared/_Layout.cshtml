@@ -16,12 +16,25 @@
     <title>Pair Matcher</title>
 </head>
 <body class="bg-light">
-    <nav class="p-2 bg-danger">
+    <nav class="p-2 bg-success">
         <div class="container d-flex justify-content-between">
 
-            <a class="btn btn-outline-dark" asp-action="addstudent" asp-controller="student"><i class="fa-solid fa-user-plus me-2"></i>Tələbə əlavə et</a>
-            <a class="btn btn-outline-dark" asp-action="index" asp-controller="home"><i class="fa-solid fa-equals me-2"></i>İkili Qruplar</a>
-            <a class="btn btn-outline-dark" asp-action="students" asp-controller="student"><i class="fa-solid fa-list me-2"></i>Bütün tələbələr</a>
+            <a class="btn btn-dark" asp-action="index" asp-controller="home"><i class="fa-solid fa-equals me-2"></i>İkili Qruplar</a>
+            <a class="btn btn-dark" asp-action="students" asp-controller="student"><i class="fa-solid fa-users me-2"></i>Bütün tələbələr</a>
+
+
+            @{
+            
+            if(User.Identity.IsAuthenticated){
+                    <a class="btn btn-dark" asp-action="logout" asp-controller="account"><i class="fa-solid fa-person-walking-arrow-right me-2"></i>Cıxış Et</a>
+
+            }
+            else{
+                        <a class="btn btn-dark" asp-action="login" asp-controller="account"><i class="fa-solid fa-right-to-bracket me-2"></i>Daxil Ol</a>
+
+            }
+            
+            }
         </div>
     </nav>
     @RenderBody()

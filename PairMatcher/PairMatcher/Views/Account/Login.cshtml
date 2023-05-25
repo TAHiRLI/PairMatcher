@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+@model LoginVM
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Main.css">
+    <title>Log in</title>
+</head>
+<body id="login-body" style="background-image: url('../../images/bg-bottom-right.png');">
+
+
+    <main>
+
+        <section class="d-flex ">
+            <div class="meeting-img col-md-6" style="background-image: url('../../images/student.jpg');">
+            </div>
+            <div class="col-lg-6 container d-flex ">
+                <div class="login-form ms-lg-5 m-auto  ">
+                    <div class="login-form-context border border-dark bg-light  rounded-5 p-4">
+                        <h2 class="text-center title pt-3">Daxil Ol</h2>
+                        <form asp-action="login" method="post" asp-controller="account" id="login-form" class="mt-4">
+                            <div class="my-2">
+                                <label asp-for="UserName" class="form-label">Istifadəçi adı</label>
+                                <input type="text" asp-for="UserName" placeholder="" class="form-control rounded-pill ">
+                            </div>
+                            <div class="my-2">
+                                <label asp-for="Password" class="form-label">Şifrə</label>
+                                <input type="password" asp-for="Password" placeholder="" class="form-control rounded-pill ">
+                            </div>
+                            <div asp-validation-summary="ModelOnly" style="color:red;"></div>
+
+
+                            <small><strong>Qeyd:</strong>  Sadəcə müəllimlər sistemə daxil ola bilər</small>
+                         
+                        </form>
+                        <div class="text-center mt-2 ">
+                            <button type="submit" form="login-form" class=" submit-btn m-auto">Daxil ol</button>
+                        </div>
+
+                       
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+
+    <!-- ========================= CDNs =============================== -->
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/f0bcda735f.js"
+            crossorigin="anonymous"></script>
+</body>
+</html>

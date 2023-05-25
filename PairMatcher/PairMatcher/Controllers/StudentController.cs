@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using PairMatcher.DAL;
 using PairMatcher.Helpers;
@@ -25,6 +26,7 @@ namespace PairMatcher.Controllers
         // =============================================
         // 1. Add Student
         // =============================================
+        [Authorize]
 
         public IActionResult AddStudent()
         {
@@ -32,6 +34,8 @@ namespace PairMatcher.Controllers
         }
 
         [HttpPost]
+        [Authorize]
+
         public IActionResult AddStudent(StudentAddVM studentVM)
         {
             if (!ModelState.IsValid)
@@ -64,9 +68,16 @@ namespace PairMatcher.Controllers
         // =============================================
         // 2. Shuffle Students
         // =============================================
+        [Authorize]
         public IActionResult Shuffle()
         {
             List<Student> students = _context.Students.ToList();
+
+            students.ForEach(student => {
+                student.PairStudent = null;
+                student.PairStudentId = null;
+                });
+
 
             PairingHelper.PairStudents(students);
 
@@ -78,6 +89,7 @@ namespace PairMatcher.Controllers
         // =============================================
         // 3. Delete Student
         // =============================================
+        [Authorize]
 
         public IActionResult Delete(int id)
         {
