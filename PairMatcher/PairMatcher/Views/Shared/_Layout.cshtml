@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet"
@@ -19,25 +21,34 @@
     <nav class="p-2 bg-success">
         <div class="container d-flex justify-content-between">
 
-            <a class="btn btn-dark" asp-action="index" asp-controller="home"><i class="fa-solid fa-equals me-2"></i>İkili Qruplar</a>
-            <a class="btn btn-dark" asp-action="students" asp-controller="student"><i class="fa-solid fa-users me-2"></i>Bütün tələbələr</a>
+            <a class="btn btn-dark p-1 p-sm-2" asp-action="index" asp-controller="home"><i class="fa-solid fa-equals me-2 d-none d-sm-inline-block"></i>İkili Qruplar</a>
+            <a class="btn btn-dark p-1 p-sm-2" asp-action="students" asp-controller="student"><i class="fa-solid fa-users me-2 d-none d-sm-inline-block"></i>Bütün tələbələr</a>
 
 
             @{
             
             if(User.Identity.IsAuthenticated){
-                    <a class="btn btn-dark" asp-action="logout" asp-controller="account"><i class="fa-solid fa-person-walking-arrow-right me-2"></i>Cıxış Et</a>
+                    <a class="btn btn-dark p-1 p-sm-2" asp-action="logout" asp-controller="account"><i class="fa-solid fa-person-walking-arrow-right me-2 d-none d-sm-inline-block"></i>Cıxış Et</a>
 
             }
             else{
-                        <a class="btn btn-dark" asp-action="login" asp-controller="account"><i class="fa-solid fa-right-to-bracket me-2"></i>Daxil Ol</a>
+                        <a class="btn btn-dark p-1 p-sm-2" asp-action="login" asp-controller="account"><i class="fa-solid fa-right-to-bracket me-2 d-none d-sm-inline-block"></i>Daxil Ol</a>
 
             }
             
             }
         </div>
     </nav>
+    <div class="Author d-flex mt-2 justify-content-center">
+
+
+        <a href="https://tahirli.github.io/portfolio-react/#/" class=" btn btn-outline-danger animate__animated 	 animate__bounceInLeft  ">  <div class="animate__animated animate__delay-3s animate__slow animate__infinite animate__rubberBand text-decoration-underline ">☞ Müəllif Tahir Tahirli ☜</div></a>
+    </div>
     @RenderBody()
+
+
+
+
 
 
     <script src="https://kit.fontawesome.com/f0bcda735f.js" crossorigin="anonymous"></script>
