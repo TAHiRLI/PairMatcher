@@ -40,13 +40,13 @@ namespace PairMatcher.Helpers
 
                     if (i + 1 < numOfStudents)
                     {
-                        studentGroups[x][i].PairStudentId = studentGroups[x][i + 1].PairStudentId;
+                        studentGroups[x][i].PairStudentId = studentGroups[x][i + 1].Id;
                         studentGroups[x][i].PairStudent = studentGroups[x][i + 1];
                         studentGroups[x][i + 1].PairStudent = studentGroups[x][i];
-                        studentGroups[x][i + 1].PairStudentId = studentGroups[x][i].PairStudentId;
+                        studentGroups[x][i + 1].PairStudentId = studentGroups[x][i].Id;
 
                     }
-                }
+                } 
 
 
 
